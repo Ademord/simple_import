@@ -1,0 +1,30 @@
+{
+    "cinema": {
+        "name": "cinema_name",
+        "address": "cinema_address",
+        "stars": 5,
+        "movies": {
+            "movie1": {
+                "name": "movie1name",
+                "director": {
+                    "name": "john",
+                    "age": 31
+                }
+            },
+            "movie2": {
+                "name": "movie2name",
+                "director": {
+                    "name": "john",
+                    "age": 31
+                }
+            },
+            "movie3": {
+                "name": "movie3name",
+                "director": {
+                    "name": "john",
+                    "age": 31
+                }
+            }
+        }
+    }
+}
