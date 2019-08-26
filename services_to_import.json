@@ -47,7 +47,7 @@
             "service_id": "testsvc"
         }
     
-    }
+    },
     "test_svc2_definition": {
         "test_svc": {
             "description": "this is a test service",
