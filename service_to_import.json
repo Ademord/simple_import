@@ -1,0 +1,101 @@
+{
+    "test_svc_definition": {
+        "test_svc": {
+            "description": "this is a test service",
+            "id": "testsvc",
+            "name": "test_svc",
+            "bindable": false,
+            "plan_updateable": false,
+            "plans": [
+                {
+                "bindable": false,
+                "description": "plan for testing",
+                "free": true,
+                "id": "testplan",
+                "name": "testing plan",
+                "metadata": {
+                    "costs": {
+                        "name": "On Demand 5 + Charges",
+                        "type": "ONDEMAND",
+                        "fix_cost": {
+                        "deployment": 5
+                        },
+                        "var_rate": {
+                        "disk": 1,
+                        "memory": 10,
+                        "cpus": 50
+                        },
+                        "components": {
+                        },
+                        "description": "On Demand 5 per deployment, 50 per core, 10 per GB ram and 1 per GB disk"
+                    },
+                    "bullets": "basic plan"
+                }
+                }
+            ],
+            "requires": [],
+            "tags": [
+                "test",
+                "tester"
+            ]
+        }, 
+        "manifest": {
+            "id": "test-mani",
+            "manifest_content": "apiVersion: v1\nitems:\n    -\n        apiVersion: v1\n        kind: Service\n        metadata:\n            creationTimestamp: null\n            labels: {service: homestead}\n            name: test-service-instance-service\n            namespace: default\n        spec:\n            type: LoadBalancer\n            ports: [{port: 55555, protocol: TCP}]\n            selector: {service: homestead}\n    -\n        apiVersion: extensions/v1beta1\n        kind: Deployment\n        metadata:\n            creationTimestamp: null\n            name: test-service-instance-deployment\n            namespace: default\n        spec:\n            replicas: 1\n            strategy: {}\n            template: {metadata: {creationTimestamp: null, labels: {service: homestead}}, spec: {containers: [{image: 'ademord/coincidencia:latest', name: homestead, ports: [{containerPort: 5432, protocol: TCP}], resources: {}}], restartPolicy: Always}}\n        status: {}\nkind: List\n",
+            "manifest_type": "kubernetes",
+            "plan_id": "testplan",
+            "service_id": "testsvc"
+        }
+    
+    },
+    "test_svc2_definition": {
+        "test_svc": {
+            "description": "this is a test service",
+            "id": "testsvc2",
+            "name": "test_svc2",
+            "bindable": false,
+            "plan_updateable": false,
+            "plans": [
+                {
+                "bindable": false,
+                "description": "plan for testing",
+                "free": true,
+                "id": "testplan2",
+                "name": "testing plan",
+                "metadata": {
+                    "costs": {
+                        "name": "On Demand 5 + Charges",
+                        "type": "ONDEMAND",
+                        "fix_cost": {
+                        "deployment": 5
+                        },
+                        "var_rate": {
+                        "disk": 1,
+                        "memory": 10,
+                        "cpus": 50
+                        },
+                        "components": {
+                        },
+                        "description": "On Demand 5 per deployment, 50 per core, 10 per GB ram and 1 per GB disk"
+                    },
+                    "bullets": "basic plan"
+                }
+                }
+            ],
+            "requires": [],
+            "tags": [
+                "test",
+                "tester"
+            ]
+        }, 
+        "manifest": {
+            "id": "test-mani2",
+            "manifest_content": "apiVersion: v1\nitems:\n    -\n        apiVersion: v1\n        kind: Service\n        metadata:\n            creationTimestamp: null\n            labels: {service: homestead2}\n            name: test-service-instance-service2\n            namespace: default\n        spec:\n            type: LoadBalancer\n            ports: [{port: 55556, protocol: TCP}]\n            selector: {service: homestead2}\n    -\n        apiVersion: extensions/v1beta1\n        kind: Deployment\n        metadata:\n            creationTimestamp: null\n            name: test-service-instance-deployment2\n            namespace: default\n        spec:\n            replicas: 1\n            strategy: {}\n            template: {metadata: {creationTimestamp: null, labels: {service: homestead2}}, spec: {containers: [{image: 'ademord/coincidencia:latest', name: homestead2, ports: [{containerPort: 5432, protocol: TCP}], resources: {}}], restartPolicy: Always}}\n        status: {}\nkind: List\n",
+            "manifest_type": "kubernetes",
+            "plan_id": "testplan2",
+            "service_id": "testsvc2"
+        }
+    
+    }
+        
+}
