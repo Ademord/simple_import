@@ -1,6 +1,6 @@
 {
     "test_svc_definition": {
-        "test_svc": {
+        "service": {
             "description": "this is a test service",
             "id": "testsvc",
             "name": "test_svc",
@@ -51,7 +51,7 @@
     
     },
     "test_svc2_definition": {
-        "test_svc": {
+        "service": {
             "description": "this is a test service",
             "id": "testsvc2",
             "name": "test_svc2",
