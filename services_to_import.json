@@ -39,13 +39,15 @@
                 "tester"
             ]
         }, 
-        "manifest": {
-            "id": "test-mani",
-            "manifest_content": "apiVersion: v1\nitems:\n    -\n        apiVersion: v1\n        kind: Service\n        metadata:\n            creationTimestamp: null\n            labels: {service: homestead}\n            name: test-service-instance-service\n            namespace: default\n        spec:\n            type: LoadBalancer\n            ports: [{port: 55555, protocol: TCP}]\n            selector: {service: homestead}\n    -\n        apiVersion: extensions/v1beta1\n        kind: Deployment\n        metadata:\n            creationTimestamp: null\n            name: test-service-instance-deployment\n            namespace: default\n        spec:\n            replicas: 1\n            strategy: {}\n            template: {metadata: {creationTimestamp: null, labels: {service: homestead}}, spec: {containers: [{image: 'ademord/coincidencia:latest', name: homestead, ports: [{containerPort: 5432, protocol: TCP}], resources: {}}], restartPolicy: Always}}\n        status: {}\nkind: List\n",
-            "manifest_type": "kubernetes",
-            "plan_id": "testplan",
-            "service_id": "testsvc"
-        }
+        "manifests": [
+            {
+                "id": "test-mani",
+                "manifest_content": "apiVersion: v1\nitems:\n    -\n        apiVersion: v1\n        kind: Service\n        metadata:\n            creationTimestamp: null\n            labels: {service: homestead}\n            name: test-service-instance-service\n            namespace: default\n        spec:\n            type: LoadBalancer\n            ports: [{port: 55555, protocol: TCP}]\n            selector: {service: homestead}\n    -\n        apiVersion: extensions/v1beta1\n        kind: Deployment\n        metadata:\n            creationTimestamp: null\n            name: test-service-instance-deployment\n            namespace: default\n        spec:\n            replicas: 1\n            strategy: {}\n            template: {metadata: {creationTimestamp: null, labels: {service: homestead}}, spec: {containers: [{image: 'ademord/coincidencia:latest', name: homestead, ports: [{containerPort: 5432, protocol: TCP}], resources: {}}], restartPolicy: Always}}\n        status: {}\nkind: List\n",
+                "manifest_type": "kubernetes",
+                "plan_id": "testplan",
+                "service_id": "testsvc"
+            }
+        ]
     
     },
     "test_svc2_definition": {
@@ -88,13 +90,15 @@
                 "tester"
             ]
         }, 
-        "manifest": {
-            "id": "test-mani2",
-            "manifest_content": "apiVersion: v1\nitems:\n    -\n        apiVersion: v1\n        kind: Service\n        metadata:\n            creationTimestamp: null\n            labels: {service: homestead2}\n            name: test-service-instance-service2\n            namespace: default\n        spec:\n            type: LoadBalancer\n            ports: [{port: 55556, protocol: TCP}]\n            selector: {service: homestead2}\n    -\n        apiVersion: extensions/v1beta1\n        kind: Deployment\n        metadata:\n            creationTimestamp: null\n            name: test-service-instance-deployment2\n            namespace: default\n        spec:\n            replicas: 1\n            strategy: {}\n            template: {metadata: {creationTimestamp: null, labels: {service: homestead2}}, spec: {containers: [{image: 'ademord/coincidencia:latest', name: homestead2, ports: [{containerPort: 5432, protocol: TCP}], resources: {}}], restartPolicy: Always}}\n        status: {}\nkind: List\n",
-            "manifest_type": "kubernetes",
-            "plan_id": "testplan2",
-            "service_id": "testsvc2"
-        }
+        "manifests": [
+            {
+                "id": "test-mani2",
+                "manifest_content": "apiVersion: v1\nitems:\n    -\n        apiVersion: v1\n        kind: Service\n        metadata:\n            creationTimestamp: null\n            labels: {service: homestead2}\n            name: test-service-instance-service2\n            namespace: default\n        spec:\n            type: LoadBalancer\n            ports: [{port: 55556, protocol: TCP}]\n            selector: {service: homestead2}\n    -\n        apiVersion: extensions/v1beta1\n        kind: Deployment\n        metadata:\n            creationTimestamp: null\n            name: test-service-instance-deployment2\n            namespace: default\n        spec:\n            replicas: 1\n            strategy: {}\n            template: {metadata: {creationTimestamp: null, labels: {service: homestead2}}, spec: {containers: [{image: 'ademord/coincidencia:latest', name: homestead2, ports: [{containerPort: 5432, protocol: TCP}], resources: {}}], restartPolicy: Always}}\n        status: {}\nkind: List\n",
+                "manifest_type": "kubernetes",
+                "plan_id": "testplan2",
+                "service_id": "testsvc2"
+            }
+        ]
     
     }
         
