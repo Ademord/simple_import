@@ -1,0 +1,105 @@
+{
+    "test_svc_definition": {
+        "service": {
+            "description": "this is a test service",
+            "id": "testsvc",
+            "name": "test_svc",
+            "bindable": false,
+            "plan_updateable": false,
+            "plans": [
+                {
+                "bindable": false,
+                "description": "plan for testing",
+                "free": true,
+                "id": "testplan",
+                "name": "testing plan",
+                "metadata": {
+                    "costs": {
+                        "name": "On Demand 5 + Charges",
+                        "type": "ONDEMAND",
+                        "fix_cost": {
+                        "deployment": 5
+                        },
+                        "var_rate": {
+                        "disk": 1,
+                        "memory": 10,
+                        "cpus": 50
+                        },
+                        "components": {
+                        },
+                        "description": "On Demand 5 per deployment, 50 per core, 10 per GB ram and 1 per GB disk"
+                    },
+                    "bullets": "basic plan"
+                }
+                }
+            ],
+            "requires": [],
+            "tags": [
+                "test",
+                "tester"
+            ]
+        }, 
+        "manifests": [
+            {
+                "id": "test-mani",
+                "manifest_content": "version: '3'\nservices:\n  db:\n     image: mysql\n     container_name: mysql_db\n     restart: always\n     environment:\n        - MYSQL_ROOT_PASSWORD='secret'",
+                "manifest_type": "docker-compose",
+                "plan_id": "testplan",
+                "service_id": "testsvc"
+            }
+        ]
+    
+    },
+    "test_svc2_definition": {
+        "service": {
+            "description": "this is a test service",
+            "id": "testsvc2",
+            "name": "test_svc2",
+            "bindable": false,
+            "plan_updateable": false,
+            "plans": [
+                {
+                "bindable": false,
+                "description": "plan for testing",
+                "free": true,
+                "id": "testplan2",
+                "name": "testing plan",
+                "metadata": {
+                    "costs": {
+                        "name": "On Demand 5 + Charges",
+                        "type": "ONDEMAND",
+                        "fix_cost": {
+                        "deployment": 5
+                        },
+                        "var_rate": {
+                        "disk": 1,
+                        "memory": 10,
+                        "cpus": 50
+                        },
+                        "components": {
+                        },
+                        "description": "On Demand 5 per deployment, 50 per core, 10 per GB ram and 1 per GB disk"
+                    },
+                    "bullets": "basic plan"
+                }
+                }
+            ],
+            "requires": [],
+            "tags": [
+                "test",
+                "tester"
+            ]
+        }, 
+        "manifests": [
+            {
+                "id": "test-mani2",
+                "manifest_content": "version: '3'\nservices:\n  db:\n     image: mysql\n     container_name: mysql_db\n     restart: always\n     environment:\n        - MYSQL_ROOT_PASSWORD='secret'",
+                "manifest_type": "docker-compose",
+                "plan_id": "testplan2",
+                "service_id": "testsvc2"
+            }
+        ]
+    
+    }
+        
+}
